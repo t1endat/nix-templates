@@ -13,8 +13,24 @@
     {
       devShells = forEachSupportedSystem ({ pkgs }: {
         default = pkgs.mkShell {
-          packages = with pkgs; [ python311 virtualenv ] ++
-            (with pkgs.python311Packages; [ pip ]);
+          packages = with pkgs; [ 
+          python311 
+          ] ++
+            (with pkgs.python311Packages; [ 
+              pip 
+              nose2
+              black
+              pyflakes
+              isort
+              cython_3
+            ]) 
+            ++
+            (with pkgs.emacsPackages; [
+              poetry
+              pyenv-mode
+              lsp-pyright
+            ]) 
+            ;
         };
       });
     };
