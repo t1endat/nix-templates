@@ -14,9 +14,10 @@
       devShells = forEachSupportedSystem ({ pkgs }: {
         default = pkgs.mkShell {
           packages = with pkgs; [ 
-            llvmPackages_14.clang
+            llvmPackages_16.clang
             cmake
             cmakeCurses
+            rtags
           ];
         };
       });
