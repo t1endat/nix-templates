@@ -15,22 +15,17 @@
         default = pkgs.mkShell {
           packages = with pkgs; [ 
           python311 
+          poetry
+          black
+          isort
+          nodePackages_latest.pyright
           ] ++
             (with pkgs.python311Packages; [ 
               pip 
               nose2
-              black
               pyflakes
-              isort
               cython_3
-            ]) 
-            ++
-            (with pkgs.emacsPackages; [
-              poetry
-              pyenv-mode
-              lsp-pyright
-            ]) 
-            ;
+            ]);
         };
       });
     };
