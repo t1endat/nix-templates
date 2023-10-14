@@ -71,6 +71,10 @@
           description = "Rust development environment with Rust version defined by a rust-toolchain.toml file";
         };
 
+        org = {
+          path = ./org;
+          description = "Org workspace environment";
+        };
         # Aliases
         rt = rust-toolchain;
       };

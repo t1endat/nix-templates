@@ -13,8 +13,11 @@
     {
       devShells = forEachSupportedSystem ({ pkgs }: {
         default = pkgs.mkShell {
-          packages = with pkgs; [ python311 sqlite] ++
-            (with pkgs.python311Packages; [ pip jupyter ]);
+          packages = with pkgs; [ 
+          python311 
+          sqlite 
+          typst
+          ] ++ (with pkgs.python311Packages; [ pip jupyter ]);
         };
       });
     };
