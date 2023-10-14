@@ -18,7 +18,7 @@
           poetry
           black
           isort
-          nodePackages_latest.pyright
+          nodePackages.pyright
           ] ++
             (with pkgs.python311Packages; [ 
               pip 
