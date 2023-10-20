@@ -14,17 +14,17 @@
       devShells = forEachSupportedSystem ({ pkgs }: {
         default = pkgs.mkShell {
           packages = with pkgs; [ 
-          python310 
-          poetry
-          black
-          isort
-          nodePackages.pyright
+          python310
+          poetry #package manager
+          black #formatter 
+          ruff #better linting
+          nodePackages.pyright #lsp
+          pre-commit
           ] ++
-            (with pkgs.python310Packages; [ 
+            (with pkgs.python310Packages; [
               pip 
-              nose2
-              pyflakes
-              cython_3
+              nose2 #testing
+              cython_3 
             ]);
         };
       });
