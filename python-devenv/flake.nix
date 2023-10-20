@@ -23,6 +23,7 @@
           {
             default = devenv.lib.mkShell {
               inherit inputs pkgs;
+
               modules = [
                 {
                   # https://devenv.sh/reference/options/
@@ -38,10 +39,6 @@
                         nose2 #testing
                         cython_3 
                       ]);
-
-                  enterShell = ''
-                    echo hello
-                  '';
                 }
               ];
             };
