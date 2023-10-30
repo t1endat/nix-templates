@@ -1,32 +1,55 @@
 {
-  description = "A Nix-flake-based Python development environment";
+  inputs = {
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.05";
+    systems.url = "github:nix-systems/default";
+    devenv.url = "github:cachix/devenv";
+  };
 
-  inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+  nixConfig = {
+    extra-trusted-public-keys = "devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw=";
+    extra-substituters = "https://devenv.cachix.org";
+  };
 
-  outputs = { self, nixpkgs }:
+  outputs = { self, nixpkgs, devenv, systems, ... } @ inputs:
     let
-      supportedSystems = [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin" ];
-      forEachSupportedSystem = f: nixpkgs.lib.genAttrs supportedSystems (system: f {
-        pkgs = import nixpkgs { inherit system; };
-      });
+      forEachSystem = nixpkgs.lib.genAttrs (import systems);
     in
     {
-      devShells = forEachSupportedSystem ({ pkgs }: {
-        default = pkgs.mkShell {
-          packages = with pkgs; [ 
-          python310
-          poetry #package manager
-          black #formatter 
-          ruff #better linting
-          nodePackages.pyright #lsp
-          pre-commit
-          ] ++
-            (with pkgs.python310Packages; [
-              pip 
-              nose2 #testing
-              cython_3 
-            ]);
-        };
-      });
+      devShells = forEachSystem
+        (system:
+          let
+            pkgs = nixpkgs.legacyPackages.${system};
+          in
+          {
+            default = devenv.lib.mkShell {
+              inherit inputs pkgs;
+
+              modules = [
+                {
+                  # https://devenv.sh/reference/options/
+                  packages = with pkgs; [ 
+                    python311
+                    poetry #package manager
+                    black #formatter 
+                    ruff #better linting
+                    nodePackages.pyright #lsp
+                    ] ++
+                      (with pkgs.python311Packages; [
+                        pip 
+                        nose2 #testing
+                        cython_3 
+                      ]);
+                },
+                pre-commit.hooks = {
+                  # lint shell scripts
+                  shellcheck.enable = true;
+                  # execute example shell from Markdown files
+                  mdsh.enable = true;
+                  # format Python code
+                  black.enable = true;
+                };
+              ];
+            };
+          });
     };
 }
