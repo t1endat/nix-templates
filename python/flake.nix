@@ -29,7 +29,6 @@
                   # https://devenv.sh/reference/options/
                   packages = with pkgs; [ 
                     python310
-                    poetry #package manager
                     black #formatter 
                     nodePackages.pyright #lsp
                     ] ++
@@ -37,6 +36,19 @@
                         nose2 #testing
                         cython_3 
                       ]);
+
+                  # https://devenv.sh/languages/
+                  languages.python = {
+                    enable = true;
+                    poetry = {
+                      enable = true;
+                      activate.enable = true;
+                      install.enable = true;
+                      install.allExtras = true;
+                    };
+                  };
+
+                  # https://devenv.sh/pre-commit-hooks/
                   pre-commit.hooks = {
                     # An extremely fast Python linter, written in Rust.
                     ruff.enable = true;
