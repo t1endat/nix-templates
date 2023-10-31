@@ -28,24 +28,20 @@
                 {
                   # https://devenv.sh/reference/options/
                   packages = with pkgs; [ 
-                    python311
+                    python310
                     poetry #package manager
                     black #formatter 
-                    ruff #better linting
                     nodePackages.pyright #lsp
                     ] ++
-                      (with pkgs.python311Packages; [
-                        pip 
+                      (with pkgs.python310Packages; [
                         nose2 #testing
                         cython_3 
                       ]);
                   pre-commit.hooks = {
+                    # An extremely fast Python linter, written in Rust.
+                    ruff.enable = true;
                     # lint shell scripts
                     shellcheck.enable = true;
-                    # execute example shell from Markdown files
-                    mdsh.enable = true;
-                    # format Python code
-                    black.enable = true;
                   };
                 }
               ];
