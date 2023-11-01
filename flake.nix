@@ -66,8 +66,8 @@
           description = "Python development environment";
         };
 
-        rust-toolchain = {
-          path = ./rust-toolchain;
+        rust = {
+          path = ./rust;
           description = "Rust development environment with Rust version defined by a rust-toolchain.toml file";
         };
 
@@ -76,7 +76,7 @@
           description = "Org workspace environment";
         };
         # Aliases
-        rt = rust-toolchain;
+        rt = rust;
       };
     };
 }
