@@ -28,11 +28,11 @@
                 {
                   # https://devenv.sh/reference/options/
                   packages = with pkgs; [ 
-                    python310
+                    python311
                     black #formatter 
                     nodePackages.pyright #lsp
                     ] ++
-                      (with pkgs.python310Packages; [
+                      (with pkgs.python311Packages; [
                         nose2 #testing
                         cython_3 
                       ]);
