@@ -28,7 +28,7 @@
                 {
                   # https://devenv.sh/reference/options/
                   packages = with pkgs; [ 
-                    python311
+                    # python311
                     black #formatter 
                     nodePackages.pyright #lsp
                     ] ++
