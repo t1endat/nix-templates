@@ -40,12 +40,13 @@
                   # https://devenv.sh/languages/
                   languages.python = {
                     enable = true;
-                    poetry = {
-                      enable = true;
-                      activate.enable = true;
-                      install.enable = true;
-                      install.allExtras = true;
-                    };
+                    venv.enable = true;
+                    # poetry = {
+                    #   enable = true;
+                    #   activate.enable = true;
+                    #   install.enable = true;
+                    #   install.allExtras = true;
+                    # };
                   };
 
                   # https://devenv.sh/pre-commit-hooks/
