@@ -27,29 +27,27 @@
               modules = [
                 {
                   # https://devenv.sh/reference/options/
-                  packages = with pkgs; [ 
-                    # python311
-                    black #formatter 
-                    nodePackages.pyright #lsp
-                    ] ++
-                      (with pkgs.python311Packages; [
-                        nose2 #testing
-                        cython_3 
+                  # packages = with pkgs; [ 
+                  #   # python311
+                  #   black #formatter 
+                  #   nodePackages.pyright #lsp
+                  #   ] ++
+                  #     (with pkgs.python311Packages; [
+                  #       nose2 #testing
+                  #       cython_3 
+                  #     ]);
 
-                        # additional packages
-                      ]);
-
-                  # https://devenv.sh/languages/
-                  languages.python = {
-                    enable = true;
-                    # venv.enable = true;
-                    poetry = {
-                      enable = true;
-                      activate.enable = true;
-                      install.enable = true;
-                      install.allExtras = true;
-                    };
-                  };
+                  # # https://devenv.sh/languages/
+                  # languages.python = {
+                  #   enable = true;
+                  #   # venv.enable = true;
+                  #   poetry = {
+                  #     enable = true;
+                  #     activate.enable = true;
+                  #     install.enable = true;
+                  #     install.allExtras = true;
+                  #   };
+                  # };
 
                   # https://devenv.sh/pre-commit-hooks/
                   # pre-commit.hooks = {
