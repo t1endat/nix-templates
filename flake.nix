@@ -72,8 +72,8 @@
                           defined by a rust-toolchain.toml file";
         };
         
-        modern_c = {
-          path = ./modern_c;
+        modern-c = {
+          path = ./modern-c;
           description = "C development environment";
         };
 

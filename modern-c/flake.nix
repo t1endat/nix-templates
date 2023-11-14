@@ -27,15 +27,10 @@
               modules = [
                 {
                   # https://devenv.sh/reference/options/
-                  # packages = with pkgs; [ 
-                  #   # python311
-                  #   black #formatter 
-                  #   nodePackages.pyright #lsp
-                  #   ] ++
-                  #     (with pkgs.python311Packages; [
-                  #       nose2 #testing
-                  #       cython_3 
-                  #     ]);
+                  packages = with pkgs; [ 
+                    cpputest # testing
+                    lldb_16 # debugger
+                  ];
 
                   # https://devenv.sh/languages/
                   languages.c = {
