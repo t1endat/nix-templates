@@ -1,31 +1,54 @@
 {
   inputs = {
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    systems.url = "github:nix-systems/default";
+    devenv.url = "github:cachix/devenv";
     fenix = {
       url = "github:nix-community/fenix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nixpkgs.url = "nixpkgs/nixos-unstable";
   };
 
-  outputs = { self, fenix, nixpkgs }: {
-    packages.x86_64-linux.default = fenix.packages.x86_64-linux.minimal.toolchain;
-    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      modules = [
-        ({ pkgs, ... }: {
-          nixpkgs.overlays = [ fenix.overlays.default ];
-          environment.systemPackages = with pkgs; [
-            (fenix.complete.withComponents [
-              "cargo"
-              "clippy"
-              "rust-src"
-              "rustc"
-              "rustfmt"
-            ])
-            rust-analyzer-nightly
-          ];
-        })
-      ];
-    };
+  nixConfig = {
+    extra-trusted-public-keys = "devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw=";
+    extra-substituters = "https://devenv.cachix.org";
   };
+
+  outputs = { self, nixpkgs, devenv, systems, ... } @ inputs:
+    let
+      forEachSystem = nixpkgs.lib.genAttrs (import systems);
+    in
+    {
+      devShells = forEachSystem
+        (system:
+          let
+            pkgs = nixpkgs.legacyPackages.${system};
+          in
+          {
+            default = devenv.lib.mkShell {
+              inherit inputs pkgs;
+
+              modules = [
+                {
+                  # https://devenv.sh/reference/options/
+                  packages = with pkgs; [ ];
+
+                  # https://devenv.sh/languages/
+                  languages.rust = {
+                    enable = true;
+                    # https://devenv.sh/reference/options/#languagesrustchannel
+                    channel = "nightly";
+                    components = [ "rustc" "cargo" "clippy" "rustfmt" "rust-analyzer" ];
+                  };
+
+                  # https://devenv.sh/pre-commit-hooks/
+                  pre-commit.hooks = {
+                    rustfmt.enable = true;
+                    clippy.enable = true;
+                  };
+                }
+              ];
+            };
+          });
+    };
 }
