@@ -23,6 +23,13 @@
           packages = with pkgs; [
             rustToolchain
             rust-analyzer
+
+            # embedded env
+            qemu #virtual
+            cargo-binutils
+            openocd
+            gdb
+            cargo-embed
           ];
         };
       });
