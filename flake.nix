@@ -68,7 +68,13 @@
 
         rust = {
           path = ./rust;
-          description = "Rust development environment with Rust version defined by a rust-toolchain.toml file";
+          description = "Rust development environment with Rust version 
+                          defined by a rust-toolchain.toml file";
+        };
+        
+        modern-c = {
+          path = ./modern-c;
+          description = "C development environment";
         };
 
         org = {
