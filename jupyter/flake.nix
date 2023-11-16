@@ -19,6 +19,9 @@
             pip #for install extensions
             ipython
             jupyterlab
+            jedi-language-server
+            black 
+            isort
 
             #additional packages
             numpy
