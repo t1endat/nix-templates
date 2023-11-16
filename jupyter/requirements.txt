@@ -1,0 +1,4 @@
+# jupyter lab extension list
+jupyterlab-code-formatter
+jupyterlab-lsp
+catppuccin-jupyterlab
