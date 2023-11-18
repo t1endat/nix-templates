@@ -29,6 +29,8 @@
             pandas
             matplotlib
             scikit-learn
+
+            mlflow #ML lifecycle
           ]))
         ];
         shellHook = "jupyter-lab";
