@@ -33,7 +33,7 @@
             mlflow #ML lifecycle
           ]))
         ];
-        shellHook = "jupyter-lab";
+        # shellHook = "jupyter-lab";
       };
     }
   );
