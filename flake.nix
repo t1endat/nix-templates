@@ -66,6 +66,11 @@
           description = "Python development environment";
         };
 
+        jupyter = {
+          path = ./jupyter;
+          description = "Jupyter for ML development environment";
+        };
+        
         rust = {
           path = ./rust;
           description = "Rust development environment with Rust version 
