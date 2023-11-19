@@ -28,13 +28,8 @@
                 {
                   # https://devenv.sh/reference/options/
                   packages = with pkgs; [ 
-<<<<<<< HEAD
-                    lldb_16
-                    cpputest
-=======
                     cpputest # testing
                     lldb_16 # debugger
->>>>>>> 67c0675b5eea0fb2006dbd56e398f88c89e878a3
                   ];
 
                   # https://devenv.sh/languages/
