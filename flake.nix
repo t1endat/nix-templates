@@ -71,10 +71,14 @@
           description = "Jupyter for ML development environment";
         };
         
-        rust = {
-          path = ./rust;
-          description = "Rust development environment with Rust version 
-                          defined by a rust-toolchain.toml file";
+        rust-web = {
+          path = ./rust-web;
+          description = "Web development environment with rust";
+        };
+        
+        rust-embedded = {
+          path = ./rust-embedded;
+          description = "Embedded development environment with rust";
         };
         
         modern-c = {
