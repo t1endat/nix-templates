@@ -14,7 +14,7 @@
     extra-substituters = "https://devenv.cachix.org";
   };
 
-  outputs = { self, nixpkgs, devenv, systems, ... } @ inputs:
+  outputs = { self, nixpkgs, devenv, systems, fenix,... } @ inputs:
     let
       forEachSystem = nixpkgs.lib.genAttrs (import systems);
     in
@@ -23,6 +23,7 @@
         (system:
           let
             pkgs = nixpkgs.legacyPackages.${system};
+            fenixpkgs = fenix.packages.${system};
           in
           {
             default = devenv.lib.mkShell {
@@ -37,8 +38,8 @@
                   languages.rust = {
                     enable = true;
                     # https://devenv.sh/reference/options/#languagesrustchannel
-                    channel = "nightly";
                     components = [ "rustc" "cargo" "clippy" "rustfmt" "rust-analyzer" ];
+                    toolchain.rustc = fenixpkgs.fromToolchainFile { dir = ./.; };
                   };
 
                   # https://devenv.sh/pre-commit-hooks/
