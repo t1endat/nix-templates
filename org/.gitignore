@@ -1,0 +1,4 @@
+#nix stuff
+.venv/
+.devenv/
+.direnv/
