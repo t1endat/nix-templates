@@ -91,7 +91,7 @@
           description = "Org workspace environment";
         };
         # Aliases
-        rt = rust;
+        # rt = rust;
       };
     };
 }
