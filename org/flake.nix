@@ -1,4 +1,6 @@
 {
+  description = "A Nix-flake-based Python development environment";
+
   inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
 
   outputs = { self, nixpkgs }:
@@ -12,11 +14,13 @@
       devShells = forEachSupportedSystem ({ pkgs }: {
         default = pkgs.mkShell {
           packages = with pkgs; [ 
-            # python311 
+            python311 
+            
             sqlite 
             typst
-            ];
-          # ] ++ (with pkgs.python311Packages; [ pip jupyter ]);
+            typst-lsp
+            typst-fmt
+          ];
         };
       });
     };

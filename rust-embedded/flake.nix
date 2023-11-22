@@ -39,6 +39,8 @@
                     cargo-binutils
                     cargo-generate
                     probe-rs
+
+                    rust-script
                   ];
 
                   # https://devenv.sh/languages/

@@ -14,7 +14,7 @@
     extra-substituters = "https://devenv.cachix.org";
   };
 
-  outputs = { self, nixpkgs, devenv, systems, fenix,... } @ inputs:
+  outputs = { self, nixpkgs, devenv, systems, fenix, ... } @ inputs:
     let
       forEachSystem = nixpkgs.lib.genAttrs (import systems);
     in
@@ -32,7 +32,9 @@
               modules = [
                 {
                   # https://devenv.sh/reference/options/
-                  packages = with pkgs; [ ];
+                  packages = with pkgs; [ 
+                    rust-script
+                  ];
 
                   # https://devenv.sh/languages/
                   languages.rust = {
