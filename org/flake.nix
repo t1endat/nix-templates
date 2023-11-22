@@ -15,7 +15,8 @@
         default = pkgs.mkShell {
           packages = with pkgs; [ 
             python311 
-            rustup # you should install stable version by command: rustup default stable
+            rustup 
+            # should install stable toolchain: `rustup default stable`
             rust-script
             
             sqlite 
