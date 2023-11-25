@@ -19,6 +19,7 @@
             # should install stable toolchain: `rustup default stable`
             rust-script
             
+            gnuplot
             sqlite 
             typst
             typst-lsp
