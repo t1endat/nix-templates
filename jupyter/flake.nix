@@ -30,7 +30,7 @@
             matplotlib
             scikit-learn
 
-            mlflow #ML lifecycle
+            # mlflow #ML lifecycle
           ]))
         ];
         # shellHook = "jupyter-lab";

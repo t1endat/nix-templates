@@ -52,8 +52,12 @@
 
                   # https://devenv.sh/pre-commit-hooks/
                   pre-commit.hooks = {
-                    # An extremely fast Python linter, written in Rust.
+                    # python linter
                     ruff.enable = true;
+
+                    # python formatter
+                    black.enable = true;
+                    
                     # lint shell scripts
                     # shellcheck.enable = true;
                   };
