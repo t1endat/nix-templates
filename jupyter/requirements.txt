@@ -1,4 +1,10 @@
-# jupyter lab extension list
+# jupyter lab extension 
 jupyterlab-code-formatter
 jupyterlab-lsp
+jupyterlab-vim
+jupyterlab-spellchecker
 catppuccin-jupyterlab
+lckr_jupyterlab_variableinspector
+
+# packages (can not install by nix)
+mlflow

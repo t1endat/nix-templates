@@ -25,12 +25,12 @@
 
             #additional packages
             numpy
-            seaborn
             pandas
+            seaborn
             matplotlib
             scikit-learn
-
-            # mlflow #ML lifecycle
+            plotly # better viz
+            ipywidgets # requirement plotly
           ]))
         ];
         # shellHook = "jupyter-lab";
