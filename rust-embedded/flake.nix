@@ -40,7 +40,7 @@
                     cargo-generate
                     probe-rs
 
-                    rust-script
+                    # rust-script
                   ];
 
                   # https://devenv.sh/languages/
