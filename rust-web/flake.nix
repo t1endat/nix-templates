@@ -33,7 +33,7 @@
                 {
                   # https://devenv.sh/reference/options/
                   packages = with pkgs; [ 
-                    rust-script
+                    # rust-script
                   ];
 
                   # https://devenv.sh/languages/
