@@ -15,6 +15,7 @@
     in rec {
       devShell = pkgs.mkShell {
         buildInputs = with pkgs; [
+          nodejs_20
           (python3.withPackages(ps: with ps; [
             pip #for install extensions
             ipython
@@ -25,12 +26,10 @@
 
             #additional packages
             numpy
-            pandas
-            seaborn
-            matplotlib
+            polars 
             scikit-learn
-            plotly # better viz
-            ipywidgets # requirement plotly
+            ipywidgets # require by plotly 
+            plotly
           ]))
         ];
         # shellHook = "jupyter-lab";
