@@ -1,10 +1,13 @@
-# jupyter lab extension 
+# jupyter lab extensions
 jupyterlab-code-formatter
 jupyterlab-lsp
 jupyterlab-vim
 jupyterlab-spellchecker
-catppuccin-jupyterlab
 lckr_jupyterlab_variableinspector
+catppuccin-jupyterlab
 
-# packages (can not install by nix)
+# add torch for cpu 
+# pip3 install torch --index-url https://download.pytorch.org/whl/cpu
+
+# can not install by nix
 mlflow

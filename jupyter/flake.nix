@@ -30,6 +30,8 @@
             scikit-learn
             ipywidgets # require by plotly 
             plotly
+            tensorflow
+            # torch
           ]))
         ];
         # shellHook = "jupyter-lab";
