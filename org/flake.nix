@@ -14,16 +14,20 @@
       devShells = forEachSupportedSystem ({ pkgs }: {
         default = pkgs.mkShell {
           packages = with pkgs; [ 
-            python311 
-            rustup 
-            # should install stable toolchain: `rustup default stable`
-            rust-script
-            
-            gnuplot
-            sqlite 
-            typst
+            gnuplot 
+            sqlite # required by roam
+            languagetool # grammar
+            typst # write paper
             typst-lsp
             typst-fmt
+            nodePackages.mermaid-cli # diagram using mermaid
+
+            # run rust in org
+            rustup # you should install stable version by command: rustup default stable
+            rust-script
+
+            # run python in org
+            python311
           ];
         };
       });
