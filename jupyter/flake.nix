@@ -15,14 +15,14 @@
     in rec {
       devShell = pkgs.mkShell {
         buildInputs = with pkgs; [
-          nodejs_20
-          (python3.withPackages(ps: with ps; [
+          black #formatter 
+          isort #formatter
+          nodePackages.pyright #lsp for emacs
+          (python311.withPackages(ps: with ps; [
             pip #for install extensions
             ipython
             jupyterlab
             jedi-language-server
-            black 
-            isort
 
             #additional packages
             numpy
@@ -31,7 +31,6 @@
             ipywidgets # require by plotly 
             plotly
             tensorflow
-            # torch
           ]))
         ];
         # shellHook = "jupyter-lab";
