@@ -29,7 +29,7 @@
                   # https://devenv.sh/reference/options/
                   packages = with pkgs; [ 
                     cpputest # testing
-                    lldb_17 # debugger
+                    lldb # debugger
                   ];
 
                   # https://devenv.sh/languages/
