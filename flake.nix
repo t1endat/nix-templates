@@ -76,9 +76,9 @@
           description = "Web development environment with rust";
         };
         
-        rust-embedded = {
-          path = ./rust-embedded;
-          description = "Embedded development environment with rust";
+        rust-wasm = {
+          path = ./rust-wasm;
+          description = "WASM development environment with rust";
         };
         
         modern-c = {
