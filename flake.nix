@@ -71,14 +71,9 @@
           description = "Jupyter for ML development environment";
         };
         
-        rust-web = {
-          path = ./rust-web;
-          description = "Web development environment with rust";
-        };
-        
-        rust-wasm = {
-          path = ./rust-wasm;
-          description = "WASM development environment with rust";
+        rust = {
+          path = ./rust;
+          description = "Rust development environment";
         };
         
         modern-c = {
