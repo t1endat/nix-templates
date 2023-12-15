@@ -35,7 +35,6 @@
                       (with pkgs.python311Packages; [
                         nose2 #testing
                         debugpy #debugger
-                        cython_3 
                       ]);
 
                   # # https://devenv.sh/languages/
