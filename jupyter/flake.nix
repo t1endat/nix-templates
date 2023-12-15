@@ -15,11 +15,12 @@
     in rec {
       devShell = pkgs.mkShell {
         buildInputs = with pkgs; [
-          black #formatter 
-          isort #formatter
+          nodejs # build-status
+          black # formatter 
+          isort # formatter
           nodePackages.pyright #lsp for emacs
           (python311.withPackages(ps: with ps; [
-            pip #for install extensions
+            pip # for install extensions
             ipython
             jupyterlab
             jedi-language-server

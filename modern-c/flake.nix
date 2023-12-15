@@ -30,6 +30,7 @@
                   packages = with pkgs; [ 
                     cpputest # testing
                     lldb # debugger
+                    nodejs # required by dap-mode  
                   ];
 
                   # https://devenv.sh/languages/
