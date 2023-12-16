@@ -14,9 +14,7 @@
       devShells = forEachSupportedSystem ({ pkgs }: {
         default = pkgs.mkShell {
           packages = with pkgs; [ 
-            gnuplot 
             sqlite # required by roam
-            languagetool # grammar
             typst # write paper
             typst-lsp
             typst-fmt

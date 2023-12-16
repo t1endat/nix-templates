@@ -15,7 +15,6 @@
     in rec {
       devShell = pkgs.mkShell {
         buildInputs = with pkgs; [
-          nodejs # build-status
           black # formatter 
           isort # formatter
           nodePackages.pyright #lsp for emacs

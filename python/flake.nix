@@ -28,7 +28,6 @@
                 {
                   # https://devenv.sh/reference/options/
                   packages = with pkgs; [ 
-                    nodejs # required by dap-mode 
                     black #formatter 
                     nodePackages.pyright #lsp
                     ] ++

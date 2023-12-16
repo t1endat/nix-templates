@@ -34,7 +34,6 @@
                   # https://devenv.sh/reference/options/
                   packages = with pkgs; [ 
                     lldb # debugger
-                    nodejs # required by dap-mode 
                   ];
 
                   # https://devenv.sh/languages/
