@@ -30,6 +30,8 @@
                   packages = with pkgs; [ 
                     cpputest # testing
                     lldb # debugger
+                    clang-tools # including clang-format
+                    # nodePackages.bash-language-server # lsp for bash
                   ];
 
                   # https://devenv.sh/languages/
