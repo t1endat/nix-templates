@@ -43,6 +43,7 @@
                   pre-commit.hooks = {
                     # formatter for c/c++
                     clang-format.enable = true;
+                    
                     # lint shell scripts
                     # shellcheck.enable = true;
                   };

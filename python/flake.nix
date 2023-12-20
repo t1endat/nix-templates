@@ -32,11 +32,11 @@
                     nodePackages.pyright #lsp
                     ] ++
                       (with pkgs.python311Packages; [
-                        nose2 #testing
+                        pytest #testing
                         debugpy #debugger
                       ]);
 
-                  # # https://devenv.sh/languages/
+                  # https://devenv.sh/languages/
                   languages.python = {
                     enable = true;
                     # venv.enable = true;
