@@ -32,7 +32,6 @@
                     nodePackages.pyright #lsp
                     ] ++
                       (with pkgs.python311Packages; [
-                        pytest #testing
                         debugpy #debugger
                       ]);
 
