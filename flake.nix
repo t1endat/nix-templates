@@ -63,27 +63,32 @@
       templates = rec {
         python = {
           path = ./python;
-          description = "Python development environment";
+          description = "Python dev env";
         };
 
         jupyter = {
           path = ./jupyter;
-          description = "Jupyter for ML development environment";
+          description = "Jupyter for ML dev env";
         };
         
         rust = {
           path = ./rust;
-          description = "Rust development environment";
+          description = "Rust (replacement of C++) dev env";
         };
         
         modern-c = {
           path = ./modern-c;
-          description = "C development environment";
+          description = "C dev env";
+        };
+        
+        zig = {
+          path = ./zig;
+          description = "Zig (replacement of C) dev env";
         };
 
         org = {
           path = ./org;
-          description = "Org workspace environment";
+          description = "Org mode for emacs";
         };
         # Aliases
         # rt = rust;
