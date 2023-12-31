@@ -27,11 +27,11 @@
               modules = [
                 {
                   # https://devenv.sh/reference/options/
-                  packages = with pkgs; [ 
+                  packages = with pkgs; [
                     cpputest # testing
                     lldb # debugger
                     clang-tools # including clang-format
-                    # nodePackages.bash-language-server # lsp for bash
+                    platformio # cross-platform embedded tool
                   ];
 
                   # https://devenv.sh/languages/
@@ -43,7 +43,7 @@
                   pre-commit.hooks = {
                     # formatter for c/c++
                     clang-format.enable = true;
-                    
+
                     # lint shell scripts
                     # shellcheck.enable = true;
                   };
