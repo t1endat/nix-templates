@@ -33,7 +33,6 @@
                     ] ++
                       (with pkgs.python311Packages; [
                         debugpy # debugger
-                        pytest # testing
                       ]);
 
                   # https://devenv.sh/languages/
