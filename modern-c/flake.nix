@@ -31,7 +31,7 @@
                     cpputest # testing
                     lldb # debugger
                     clang-tools # including clang-format
-                    platformio # cross-platform embedded tool
+                    # platformio # cross-platform embedded tool
                   ];
 
                   # https://devenv.sh/languages/

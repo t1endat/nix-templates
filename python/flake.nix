@@ -27,12 +27,13 @@
               modules = [
                 {
                   # https://devenv.sh/reference/options/
-                  packages = with pkgs; [ 
-                    black #formatter 
+                  packages = with pkgs; [
+                    black #formatter
                     nodePackages.pyright #lsp
                     ] ++
                       (with pkgs.python311Packages; [
-                        debugpy #debugger
+                        debugpy # debugger
+                        pytest # testing
                       ]);
 
                   # https://devenv.sh/languages/
@@ -54,7 +55,7 @@
 
                     # python formatter
                     black.enable = true;
-                    
+
                     # lint shell scripts
                     # shellcheck.enable = true;
                   };
