@@ -76,16 +76,11 @@
           description = "Rust (replacement of C++) dev env";
         };
         
-        modern-c = {
-          path = ./modern-c;
-          description = "C dev env";
+        cpp = {
+          path = ./cpp;
+          description = "C/C++ dev env";
         };
         
-        zig = {
-          path = ./zig;
-          description = "Zig (replacement of C) dev env";
-        };
-
         org = {
           path = ./org;
           description = "Org mode for emacs";
