@@ -39,6 +39,10 @@
                     enable = true;
                   };
 
+                  languages.cplusplus = {
+                    enable = true;
+                  };
+
                   # https://devenv.sh/pre-commit-hooks/
                   pre-commit.hooks = {
                     # formatter for c/c++
