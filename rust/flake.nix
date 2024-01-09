@@ -33,7 +33,7 @@
                 {
                   # https://devenv.sh/reference/options/
                   packages = with pkgs; [ 
-                    lldb # debugger
+                    gdb # debugger
                   ];
 
                   # https://devenv.sh/languages/

@@ -22,7 +22,10 @@
             pip # for install extensions
             ipython
             jupyterlab
-            jedi-language-server
+            jedi-language-server # lsp
+            loguru # logging
+            pytest # testing
+            debugpy # debugger
 
             #additional packages
             numpy

@@ -28,8 +28,10 @@
                 {
                   # https://devenv.sh/reference/options/
                   packages = with pkgs; [
-                    cpputest # testing
-                    lldb # debugger
+                    zlog # C logging
+                    spdlog # C++ logging
+                    cpputest # C/C++ testing
+                    gdb # C/C++ debugger
                     clang-tools # including clang-format
                     # platformio # cross-platform embedded tool
                   ];
