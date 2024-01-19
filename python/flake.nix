@@ -1,6 +1,6 @@
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.05";
     systems.url = "github:nix-systems/default";
     devenv.url = "github:cachix/devenv";
   };
@@ -15,6 +15,10 @@
       forEachSystem = nixpkgs.lib.genAttrs (import systems);
     in
     {
+      packages = forEachSystem (system: {
+        devenv-up = self.devShells.${system}.default.config.procfileScript;
+      });
+
       devShells = forEachSystem
         (system:
           let
@@ -23,7 +27,6 @@
           {
             default = devenv.lib.mkShell {
               inherit inputs pkgs;
-
               modules = [
                 {
                   # https://devenv.sh/reference/options/
@@ -60,6 +63,7 @@
                     # lint shell scripts
                     # shellcheck.enable = true;
                   };
+                  
                 }
               ];
             };
