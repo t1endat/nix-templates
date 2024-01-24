@@ -19,21 +19,23 @@
           isort # formatter
           nodePackages.pyright #lsp for emacs
           (python311.withPackages(ps: with ps; [
-            pip # for install extensions
+            virtualenv
             ipython
-            jupyterlab
+            jupyter-core
             jedi-language-server # lsp
             loguru # logging
             pytest # testing
             debugpy # debugger
 
-            #additional packages
+            # additional packages
             numpy
-            polars 
+            polars
             scikit-learn
-            ipywidgets # require by plotly 
+            ipywidgets # require by plotly
             plotly
-            tensorflow
+            torch
+            torchinfo
+            pytest
           ]))
         ];
         # shellHook = "jupyter-lab";
