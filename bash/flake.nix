@@ -31,28 +31,17 @@
                 {
                   # https://devenv.sh/reference/options/
                   packages = with pkgs; [
-                    zlog # C logging
-                    spdlog # C++ logging
-                    cpputest # C/C++ testing
-                    gdb # C/C++ debugger
-                    clang-tools # including clang-format
-                    # platformio # cross-platform embedded tool
+                    shellcheck # linter
+                    nodePackages.bash-language-server #lsp
+                    bashdb # debugger
                   ];
-
-                  # https://devenv.sh/languages/
-                  languages.c = {
-                    enable = true;
-                  };
-
-                  languages.cplusplus = {
-                    enable = true;
-                  };
 
                   # https://devenv.sh/pre-commit-hooks/
                   pre-commit.hooks = {
-                    # formatter for c/c++
-                    clang-format.enable = true;
+                    # lint shell scripts
+                    shellcheck.enable = true;
                   };
+                  
                 }
               ];
             };

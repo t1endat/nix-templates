@@ -31,27 +31,16 @@
                 {
                   # https://devenv.sh/reference/options/
                   packages = with pkgs; [
-                    zlog # C logging
-                    spdlog # C++ logging
-                    cpputest # C/C++ testing
-                    gdb # C/C++ debugger
-                    clang-tools # including clang-format
-                    # platformio # cross-platform embedded tool
+                    nixfmt # formatter for nix
                   ];
 
-                  # https://devenv.sh/languages/
-                  languages.c = {
-                    enable = true;
-                  };
-
-                  languages.cplusplus = {
+                  languages.nix = {
                     enable = true;
                   };
 
                   # https://devenv.sh/pre-commit-hooks/
                   pre-commit.hooks = {
-                    # formatter for c/c++
-                    clang-format.enable = true;
+                    nixfmt.enable = true;
                   };
                 }
               ];

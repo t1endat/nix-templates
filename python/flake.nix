@@ -35,8 +35,6 @@
                     nodePackages.pyright #lsp
                     ] ++
                       (with pkgs.python311Packages; [
-                        nixfmt # formatter for nix
-                  
                         # loguru # logging
                         # pytest # testing
                         debugpy # debugger
@@ -58,14 +56,13 @@
                   pre-commit.hooks = {
                     # python linter
                     ruff.enable = true;
+                    
+                    # static type checker 
+                    mypy.enable = true;
 
-                    # python formatter
-                    black.enable = true;
-
-                    # lint shell scripts
-                    # shellcheck.enable = true;
+                    # %-formatted strings to f-strings
+                    flynt.enable = true;
                   };
-                  
                 }
               ];
             };

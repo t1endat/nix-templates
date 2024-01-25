@@ -61,30 +61,51 @@
 
     {
       templates = rec {
-        python = {
-          path = ./python;
-          description = "Python dev env";
+        bash = {
+          path = ./bash;
+          description = "Sh language dev env";
         };
-
+        
+        cpp = {
+          path = ./cpp;
+          description = "C/C++ language dev env";
+        };
+        
+        hdl = {
+          path = ./hdl;
+          description = "HDL languages dev env";
+        };
+        
         jupyter = {
           path = ./jupyter;
           description = "Jupyter for ML dev env";
         };
         
-        rust = {
-          path = ./rust;
-          description = "Rust (replacement of C++) dev env";
-        };
-        
-        cpp = {
-          path = ./cpp;
-          description = "C/C++ dev env";
+        nix = {
+          path = ./nix;
+          description = "Nix language dev env";
         };
         
         org = {
           path = ./org;
-          description = "Org mode for emacs";
+          description = "Org workspace env in emacs";
         };
+        
+        python = {
+          path = ./python;
+          description = "Python dev env";
+        };
+
+        rust = {
+          path = ./rust;
+          description = "Rust language dev env";
+        };
+
+        zig = {
+          path = ./zig;
+          description = "Zig language dev env";
+        };
+        
         # Aliases
         # rt = rust;
       };

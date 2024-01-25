@@ -15,8 +15,6 @@
     in rec {
       devShell = pkgs.mkShell {
         buildInputs = with pkgs; [
-          nixfmt # formatter for nix
-          
           black # formatter 
           isort # formatter
           nodePackages.pyright #lsp for emacs
