@@ -39,6 +39,7 @@
                   packages = with pkgs; [ 
                     gdb # debugger
                   ];
+                  
                   # https://devenv.sh/languages/
                   languages.rust = {
                     enable = true;
@@ -46,12 +47,12 @@
                     components = [ "rustc" "cargo" "clippy" "rustfmt" "rust-analyzer" ];
                     toolchain.rustc = fenixpkgs.fromToolchainFile { dir = ./.; };
                   };
+                  
                   # https://devenv.sh/pre-commit-hooks/
                   pre-commit.hooks = {
                     rustfmt.enable = true;
                     clippy.enable = true;
                   };
-
                 }
               ];
             };
