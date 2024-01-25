@@ -37,6 +37,8 @@
                 {
                   # https://devenv.sh/reference/options/
                   packages = with pkgs; [ 
+                    nixfmt # formatter for nix
+                        
                     gdb # debugger
                   ];
                   

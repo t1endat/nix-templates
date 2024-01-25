@@ -31,6 +31,8 @@
                 {
                   # https://devenv.sh/reference/options/
                   packages = with pkgs; [
+                    nixfmt # formatter for nix
+          
                     zlog # C logging
                     spdlog # C++ logging
                     cpputest # C/C++ testing

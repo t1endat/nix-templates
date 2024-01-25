@@ -35,6 +35,8 @@
                     nodePackages.pyright #lsp
                     ] ++
                       (with pkgs.python311Packages; [
+                        nixfmt # formatter for nix
+                  
                         # loguru # logging
                         # pytest # testing
                         debugpy # debugger
