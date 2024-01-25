@@ -14,7 +14,7 @@
     extra-substituters = "https://devenv.cachix.org";
   };
 
-  outputs = { self, nixpkgs, devenv, systems, ... } @ inputs:
+  outputs = { self, nixpkgs, devenv, systems, fenix, ... } @ inputs:
     let
       forEachSystem = nixpkgs.lib.genAttrs (import systems);
     in
@@ -32,13 +32,13 @@
           {
             default = devenv.lib.mkShell {
               inherit inputs pkgs;
+
               modules = [
                 {
                   # https://devenv.sh/reference/options/
                   packages = with pkgs; [ 
                     gdb # debugger
                   ];
-
                   # https://devenv.sh/languages/
                   languages.rust = {
                     enable = true;
@@ -46,13 +46,12 @@
                     components = [ "rustc" "cargo" "clippy" "rustfmt" "rust-analyzer" ];
                     toolchain.rustc = fenixpkgs.fromToolchainFile { dir = ./.; };
                   };
-
                   # https://devenv.sh/pre-commit-hooks/
                   pre-commit.hooks = {
                     rustfmt.enable = true;
                     clippy.enable = true;
                   };
-                  
+
                 }
               ];
             };
