@@ -66,8 +66,8 @@
           description = "Sh language dev env";
         };
         
-        cpp = {
-          path = ./cpp;
+        cc = {
+          path = ./cc;
           description = "C/C++ language dev env";
         };
         
