@@ -31,17 +31,17 @@
                 {
                   # https://devenv.sh/reference/options/
                   packages = with pkgs; [
-                    nixfmt # formatter for nix
+                    nixd                              #lsp
+                    nodePackages.bash-language-server # sh lsp
+                    bashdb                            # debugger
                   ];
-
-                  languages.nix = {
-                    enable = true;
-                  };
 
                   # https://devenv.sh/pre-commit-hooks/
                   pre-commit.hooks = {
-                    nixfmt.enable = true;
+                    # lint shell scripts
+                    shellcheck.enable = true;
                   };
+                  
                 }
               ];
             };

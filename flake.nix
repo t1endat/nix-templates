@@ -61,11 +61,6 @@
 
     {
       templates = rec {
-        bash = {
-          path = ./bash;
-          description = "Sh language dev env";
-        };
-        
         cc = {
           path = ./cc;
           description = "C/C++ language dev env";
@@ -99,11 +94,6 @@
         rust = {
           path = ./rust;
           description = "Rust language dev env";
-        };
-
-        zig = {
-          path = ./zig;
-          description = "Zig language dev env";
         };
         
         # Aliases
