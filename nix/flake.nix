@@ -32,6 +32,7 @@
                   # https://devenv.sh/reference/options/
                   packages = with pkgs; [
                     nixd                              #lsp
+                    nixfmt
                     nodePackages.bash-language-server # sh lsp
                     bashdb                            # debugger
                   ];
