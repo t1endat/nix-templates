@@ -71,11 +71,6 @@
           description = "HDL languages dev env";
         };
         
-        jupyter = {
-          path = ./jupyter;
-          description = "Jupyter for ML dev env";
-        };
-        
         nix = {
           path = ./nix;
           description = "Nix language dev env";
@@ -94,11 +89,6 @@
         rust = {
           path = ./rust;
           description = "Rust language dev env";
-        };
-        
-        rust-gui = {
-          path = ./rust-gui;
-          description = "Rust language env, for gui development";
         };
         
         # Aliases
