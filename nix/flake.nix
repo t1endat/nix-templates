@@ -33,12 +33,14 @@
                   packages = with pkgs; [
                     nil # nix lsp
                     nixfmt # nix fomatter
-                    nodePackages.bash-language-server # sh lsp
-                    shfmt # sh fomatter
+                    # nodePackages.bash-language-server # sh lsp
+                    # shfmt # sh fomatter
                   ];
 
                   # https://devenv.sh/pre-commit-hooks/
                   pre-commit.hooks = {
+                    nixpkgs-fmt.enable = true;
+                    
                     # lint shell scripts
                     shellcheck.enable = true;
                   };

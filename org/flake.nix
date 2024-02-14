@@ -36,15 +36,10 @@
                     typst-lsp
                     typst-fmt
 
-                    # run rust in org
-                    rustup # you should install stable version by command: rustup default stable
-                    rust-script
-
-                    # run python in org
-                    python311
-                    
-                    # run C/C++ in org
-                    gcc
+                    rustup # install stable version by command: rustup default stable
+                    rust-script # run rust in org
+                    python311 # run python in org
+                    gcc # run C/C++ in org
                   ];
                 }
               ];

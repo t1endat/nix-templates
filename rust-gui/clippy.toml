@@ -1,3 +1,0 @@
-# Enable all lints at their default warning level
-# except for the allowed lints below.
-warn = true
