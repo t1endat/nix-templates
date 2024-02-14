@@ -31,10 +31,10 @@
                 {
                   # https://devenv.sh/reference/options/
                   packages = with pkgs; [
-                    nixd                              #lsp
-                    nixfmt
+                    nil # nix lsp
+                    nixfmt # nix fomatter
                     nodePackages.bash-language-server # sh lsp
-                    bashdb                            # debugger
+                    shfmt # sh fomatter
                   ];
 
                   # https://devenv.sh/pre-commit-hooks/
