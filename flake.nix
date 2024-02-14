@@ -96,6 +96,11 @@
           description = "Rust language dev env";
         };
         
+        rust-gui = {
+          path = ./rust-gui;
+          description = "Rust language env, for gui development";
+        };
+        
         # Aliases
         # rt = rust;
       };
