@@ -37,8 +37,6 @@
                 {
                   # https://devenv.sh/reference/options/
                   packages = with pkgs; [ 
-                    gdb # debugger
-                    
                     # gui support for wayland
                     # expat
                     # fontconfig

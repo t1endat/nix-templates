@@ -34,9 +34,7 @@
                     # zlog # C logging
                     # spdlog # C++ logging
                     cpputest # C/C++ testing
-                    gdb # C/C++ debugger
                     clang-tools # including clang-format
-                    # platformio # cross-platform embedded tool
                   ];
 
                   # https://devenv.sh/languages/
