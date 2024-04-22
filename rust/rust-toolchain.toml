@@ -2,3 +2,5 @@
 channel = "stable"
 # targets = ["wasm32-wasi"]
 # targets = ["wasm32-unknown-unknown"]
+# targets = ["thumbv7m-none-eabi"]
+# components = [ "llvm-tools-preview" ]
