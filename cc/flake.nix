@@ -31,10 +31,10 @@
                 {
                   # https://devenv.sh/reference/options/
                   packages = with pkgs; [
-                    # zlog # C logging
-                    # spdlog # C++ logging
-                    cpputest # C/C++ testing
+                    cpputest # testing
                     clang-tools # including clang-format
+                    valgrind # memory usage errors
+                    doxygen # documentation generation
                   ];
 
                   # https://devenv.sh/languages/

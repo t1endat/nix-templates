@@ -31,15 +31,15 @@
                 {
                   # https://devenv.sh/reference/options/
                   packages = with pkgs; [
-                    sqlite # required by roam
-                    typst # write paper
-                    typst-lsp
-                    typst-fmt
+                    # typst # write paper
+                    # typst-lsp
+                    # typst-fmt
+                    texlive.combined.scheme-medium # user latex instead
 
-                    rustup # install stable version by command: rustup default stable
                     rust-script # run rust in org
-                    python311 # run python in org
-                    gcc # run C/C++ in org
+                    # rustup # install stable version by command: rustup default stable
+                    # python311 # run python in org
+                    # gcc # run C/C++ in org
                   ];
                 }
               ];
