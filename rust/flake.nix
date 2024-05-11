@@ -53,7 +53,8 @@
                   
                   languages.rust = {
                     enable = true;
-                    channel = "stable";
+                    # Bug: https://github.com/cachix/devenv/issues/1143
+                    # channel = "stable";
                     components = [ "rustc" "cargo" "clippy" "rustfmt" "rust-analyzer" ];
                     # targets = ["wasm32-wasi"]
                     # targets = ["wasm32-unknown-unknown"]
@@ -63,8 +64,9 @@
                   
                   # https://devenv.sh/pre-commit-hooks/
                   pre-commit.hooks = {
-                    # rustfmt.enable = true;
-                    # clippy.enable = true;
+                    cargo-check.enable = true;
+                    rustfmt.enable = true;
+                    clippy.enable = true;
                   };
                 }
               ];

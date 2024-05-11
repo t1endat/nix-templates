@@ -31,13 +31,13 @@
               inherit inputs pkgs;
               modules = [
                 {
-                  # https://devenv.sh/reference/options/
                   packages = with pkgs; [
                     black # formatter 
                     isort # formatter
                     nodePackages.pyright #lsp for emacs
                   ];
                   
+                  # https://devenv.sh/reference/options/
                   languages.python = {
                     enable = true;
                     poetry = {
@@ -47,6 +47,24 @@
                       };
                       activate.enable = true;
                     };
+                  };
+                  
+                  # https://devenv.sh/pre-commit-hooks/
+                  pre-commit.hooks = {
+                    # autoflake.enable = true;
+                    # black.enable = true;
+                    # check-python.enable = true;
+                    # flake8.enable = true;                   
+                    # flynt.enable = true;
+                    # isort.enable = true;
+                    # mypy.enable = true;
+                    # poetry-check.enable = true;
+                    # poetry-lock.enable = true;
+                    # pylint.enable = true;
+                    # pyright.enable = true;
+                    # python-debug-statements.enable = true;
+                    # pyupgrade.enable = true;
+                    # ruff.enable = true;
                   };
                   
                 }

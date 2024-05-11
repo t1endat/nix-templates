@@ -49,8 +49,9 @@
 
                   # https://devenv.sh/pre-commit-hooks/
                   pre-commit.hooks = {
-                    # formatter for c/c++
                     clang-format.enable = true;
+                    clang-tidy.enable = true;
+                    cmake-format.enable = true;
                   };
                 }
               ];
