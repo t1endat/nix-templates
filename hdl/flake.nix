@@ -1,8 +1,9 @@
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:cachix/devenv-nixpkgs/rolling";
     systems.url = "github:nix-systems/default";
     devenv.url = "github:cachix/devenv";
+    devenv.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   nixConfig = {
@@ -31,7 +32,7 @@
                 {
                   # https://devenv.sh/reference/options/
                   packages = with pkgs; [
-                    vhdl-ls # lsp for vhdl 
+                    # vhdl-ls # lsp for vhdl 
                     # vhd2vl # VHDL to Verilog converter 
                     # nvc # VHDL compiler and simulator 
                     # ghdl # VHDL 2008/93/87 simulator

@@ -1,8 +1,9 @@
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:cachix/devenv-nixpkgs/rolling";
     systems.url = "github:nix-systems/default";
     devenv.url = "github:cachix/devenv";
+    devenv.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   nixConfig = {
@@ -31,10 +32,10 @@
                 {
                   # https://devenv.sh/reference/options/
                   packages = with pkgs; [
-                    cpputest # testing
-                    clang-tools # including clang-format
-                    valgrind # memory usage errors
-                    doxygen # documentation generation
+                    # cpputest # testing
+                    # clang-tools # including clang-format
+                    # valgrind # memory usage errors
+                    # doxygen # documentation generation
                   ];
 
                   # https://devenv.sh/languages/
