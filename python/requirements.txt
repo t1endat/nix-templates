@@ -5,9 +5,22 @@ jupyterlab-vim
 jupyterlab-spellchecker
 lckr_jupyterlab_variableinspector
 catppuccin-jupyterlab
+jedi-language-server # lsp
+loguru # logging
+pytest # testing
+debugpy # debugger
 
-# add torch for cpu 
+# additional packages
+numpy
+polars
+scikit-learn
+ipywidgets # require by plotly
+plotly
+torch
+torchinfo
+pytest
+mlflow
+
+# torch for cpu 
 # pip3 install torch --index-url https://download.pytorch.org/whl/cpu
 
-# can not install by nix
-mlflow

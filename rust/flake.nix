@@ -15,7 +15,7 @@
     extra-substituters = "https://devenv.cachix.org";
   };
 
-  outputs = { self, nixpkgs, devenv, systems, fenix, ... } @ inputs:
+  outputs = { self, nixpkgs, devenv, systems, ... } @ inputs:
     let
       forEachSystem = nixpkgs.lib.genAttrs (import systems);
     in
@@ -28,16 +28,14 @@
         (system:
           let
             pkgs = nixpkgs.legacyPackages.${system};
-            fenixpkgs = fenix.packages.${system};
           in
           {
             default = devenv.lib.mkShell {
               inherit inputs pkgs;
-
               modules = [
                 {
                   # https://devenv.sh/reference/options/
-                  packages = with pkgs; [ 
+                  packages = [ 
                     # gui support for wayland
                     # expat
                     # fontconfig
@@ -53,18 +51,20 @@
                     # wayland
                   ];
                   
-                  # https://devenv.sh/languages/
                   languages.rust = {
                     enable = true;
-                    # https://devenv.sh/reference/options/#languagesrustchannel
+                    channel = "stable";
                     components = [ "rustc" "cargo" "clippy" "rustfmt" "rust-analyzer" ];
-                    toolchain.rustc = fenixpkgs.fromToolchainFile { dir = ./.; };
+                    # targets = ["wasm32-wasi"]
+                    # targets = ["wasm32-unknown-unknown"]
+                    # targets = ["thumbv7m-none-eabi"]
+                    # components = [ "llvm-tools-preview" ]
                   };
                   
                   # https://devenv.sh/pre-commit-hooks/
                   pre-commit.hooks = {
-                    rustfmt.enable = true;
-                    clippy.enable = true;
+                    # rustfmt.enable = true;
+                    # clippy.enable = true;
                   };
                 }
               ];

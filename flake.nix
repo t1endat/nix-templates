@@ -61,8 +61,8 @@
 
     {
       templates = rec {
-        cc = {
-          path = ./cc;
+        modern-c = {
+          path = ./modern-c;
           description = "C/C++ language dev env";
         };
         
