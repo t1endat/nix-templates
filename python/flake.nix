@@ -32,7 +32,7 @@
               modules = [
                 {
                   # https://devenv.sh/reference/options/
-                  packages = [
+                  packages = with pkgs; [
                     black # formatter 
                     isort # formatter
                     nodePackages.pyright #lsp for emacs
