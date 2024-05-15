@@ -21,6 +21,3 @@ torchinfo
 pytest
 mlflow
 
-# torch for cpu 
-# pip3 install torch --index-url https://download.pytorch.org/whl/cpu
-

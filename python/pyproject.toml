@@ -11,3 +11,21 @@ python = "^3.11"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+# ==========================torch for cpu========================================
+# [tool.poetry.dependencies]
+# torch = [
+#     { version = "^2.2.0", source = "pypi", markers = "sys_platform == 'darwin'"},
+#     { version = "^2.2.0", source = "pypi", markers = "platform_machine == 'aarch64' and sys_platform != 'darwin'"},
+#     { version = "^2.2.0", source = "pytorch_cpu", markers = "platform_machine == 'x86_64' and sys_platform != 'darwin'" },
+# ]
+# torchvision = [
+#     { version = "^0.17.0", source = "pypi", markers = "sys_platform == 'darwin'"},
+#     { version = "^0.17.0", source = "pypi", markers = "platform_machine == 'aarch64' and sys_platform != 'darwin'"},
+#     { version = "^0.17.0", source = "pytorch_cpu", markers = "platform_machine == 'x86_64' and sys_platform != 'darwin'" },
+# ]
+#
+# [[tool.poetry.source]]
+# name = "pytorch_cpu"
+# url = "https://download.pytorch.org/whl/cpu"
+# priority = "explicit"
