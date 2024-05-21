@@ -66,11 +66,6 @@
           description = "C/C++ language dev env";
         };
         
-        hdl = {
-          path = ./hdl;
-          description = "HDL languages dev env";
-        };
-        
         nix = {
           path = ./nix;
           description = "Nix language dev env";
@@ -89,6 +84,11 @@
         rust = {
           path = ./rust;
           description = "Rust language dev env";
+        };
+        
+        zig = {
+          path = ./zig;
+          description = "Zig language dev env";
         };
         
         # Aliases
