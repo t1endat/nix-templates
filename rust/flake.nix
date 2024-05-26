@@ -53,8 +53,7 @@
                   
                   languages.rust = {
                     enable = true;
-                    # Bug: https://github.com/cachix/devenv/issues/1143
-                    # channel = "stable";
+                    channel = "stable";
                     components = [ "rustc" "cargo" "clippy" "rustfmt" "rust-analyzer" ];
                     # targets = ["wasm32-wasi"]
                     # targets = ["wasm32-unknown-unknown"]
