@@ -81,15 +81,9 @@
           description = "Rust language dev env";
         };
         
-        typescript = {
-          path = ./typescript;
-          description = "TypeScript language dev env";
-        };
-        
         # Aliases
         rs = rust;
         py = python;
-        ts = typescript;
       };
     };
 }
