@@ -33,7 +33,6 @@
                   # https://devenv.sh/reference/options/
                   packages = with pkgs; [
                     # nodejs_21
-                    # typescript
                   ];
 
                   # https://devenv.sh/languages/
