@@ -32,7 +32,7 @@
                 {
                   # https://devenv.sh/reference/options/
                   packages = with pkgs; [
-                    # nodejs_21
+                    nodejs_21
                   ];
 
                   # https://devenv.sh/languages/
