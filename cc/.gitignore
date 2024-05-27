@@ -85,6 +85,9 @@ dkms.conf
 *.out
 *.app
 
+# lsp cache
+.ccls-cache/
+
 # nix stuff
 .devenv/
 .direnv/
