@@ -36,21 +36,9 @@
                 {
                   # https://devenv.sh/reference/options/
                   packages = [ 
-                    # gui support for wayland
-                    # expat
-                    # fontconfig
-                    # freetype
-                    # freetype.dev
-                    # libGL
-                    # libxkbcommon
-                    # pkg-config
-                    # xorg.libX11
-                    # xorg.libXcursor
-                    # xorg.libXi
-                    # xorg.libXrandr
-                    # wayland
                   ];
                   
+                  # https://devenv.sh/reference/options/
                   languages.rust = {
                     enable = true;
                     channel = "stable";

@@ -61,19 +61,14 @@
 
     {
       templates = rec {
-        modern-c = {
-          path = ./modern-c;
-          description = "C/C++ language dev env";
-        };
-        
-        nix = {
-          path = ./nix;
-          description = "Nix language dev env";
-        };
-        
         org = {
           path = ./org;
           description = "Org workspace env in emacs";
+        };
+        
+        cc = {
+          path = ./cc;
+          description = "C/C++ language dev env";
         };
         
         python = {
@@ -86,13 +81,15 @@
           description = "Rust language dev env";
         };
         
-        zig = {
-          path = ./zig;
-          description = "Zig language dev env";
+        typescript = {
+          path = ./typescript;
+          description = "TypeScript language dev env";
         };
         
         # Aliases
-        # rt = rust;
+        rs = rust;
+        py = python;
+        ts = typescript;
       };
     };
 }

@@ -1,0 +1,4 @@
+# nix stuff
+.devenv/
+.direnv/
+.pre-commit-config.yaml
