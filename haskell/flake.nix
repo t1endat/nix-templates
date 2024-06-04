@@ -4,7 +4,6 @@
     systems.url = "github:nix-systems/default";
     devenv.url = "github:cachix/devenv";
     devenv.inputs.nixpkgs.follows = "nixpkgs";
-    nixpkgs-python.url = "github:cachix/nixpkgs-python";
   };
 
   nixConfig = {
@@ -31,30 +30,19 @@
               inherit inputs pkgs;
               modules = [
                 {
-                  packages = with pkgs; [
-                    black # formatter 
-                    isort # formatter
-                    nodePackages.pyright #lsp for python
-                    # dockerfile-language-server-nodejs # lsp for docker
-                  ];
-                  
                   # https://devenv.sh/reference/options/
-                  languages.python = {
+                  packages = with pkgs; [
+                  ];
+
+                  # https://devenv.sh/languages/
+                  languages.haskell = {
                     enable = true;
-                    poetry = {
-                      enable = true;
-                      install = {
-                        enable = true;
-                      };
-                      activate.enable = true;
-                    };
                   };
-                  
+
                   # https://devenv.sh/pre-commit-hooks/
                   pre-commit.hooks = {
-                    ruff.enable = true;
+                    fourmolu.enable = true;
                   };
-                  
                 }
               ];
             };

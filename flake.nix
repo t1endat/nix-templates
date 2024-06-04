@@ -80,11 +80,17 @@
           path = ./rust;
           description = "Rust language dev env";
         };
+
+        haskell = {
+          path = ./haskell;
+          description = "Haskell language dev env";
+        };
         
         # Aliases
         rs = rust;
         py = python;
         cc = modern-c;
+        hk = haskell;
       };
     };
 }

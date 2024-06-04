@@ -43,7 +43,6 @@
                   # https://devenv.sh/pre-commit-hooks/
                   pre-commit.hooks = {
                     clang-format.enable = true;
-                    clang-tidy.enable = true;
                   };
                 }
               ];
