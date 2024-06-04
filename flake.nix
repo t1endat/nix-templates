@@ -66,9 +66,9 @@
           description = "Org workspace env in emacs";
         };
         
-        cc = {
-          path = ./cc;
-          description = "C/C++ language dev env";
+        modern-c = {
+          path = ./modern-c;
+          description = "C (only) language dev env";
         };
         
         python = {
@@ -84,6 +84,7 @@
         # Aliases
         rs = rust;
         py = python;
+        cc = modern-c;
       };
     };
 }

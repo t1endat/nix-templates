@@ -32,10 +32,7 @@
                 {
                   # https://devenv.sh/reference/options/
                   packages = with pkgs; [
-                    # cpputest # testing
-                    # clang-tools # including clang-format
-                    # valgrind # memory usage errors
-                    # doxygen # documentation generation
+                    clang-tools # including clang-format
                   ];
 
                   # https://devenv.sh/languages/
@@ -43,15 +40,10 @@
                     enable = true;
                   };
 
-                  languages.cplusplus = {
-                    enable = true;
-                  };
-
                   # https://devenv.sh/pre-commit-hooks/
                   pre-commit.hooks = {
                     clang-format.enable = true;
                     clang-tidy.enable = true;
-                    cmake-format.enable = true;
                   };
                 }
               ];
