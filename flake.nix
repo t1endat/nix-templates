@@ -89,8 +89,8 @@
         # Aliases
         rs = rust;
         py = python;
-        cc = modern-c;
-        hk = haskell;
+        c = modern-c;
+        hs = haskell;
       };
     };
 }
