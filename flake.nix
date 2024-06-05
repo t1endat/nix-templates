@@ -81,16 +81,16 @@
           description = "Rust language dev env";
         };
 
-        haskell = {
-          path = ./haskell;
-          description = "Haskell language dev env";
+        typescript = {
+          path = ./typescript;
+          description = "TypeScript language dev env";
         };
         
         # Aliases
         rs = rust;
         py = python;
         c = modern-c;
-        hs = haskell;
+        ts = typescript;
       };
     };
 }

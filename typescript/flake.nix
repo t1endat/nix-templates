@@ -35,13 +35,14 @@
                   ];
 
                   # https://devenv.sh/languages/
-                  languages.haskell = {
+                  languages.typescript = {
                     enable = true;
                   };
 
                   # https://devenv.sh/pre-commit-hooks/
                   pre-commit.hooks = {
-                    fourmolu.enable = true;
+                    denofmt.enable = true;
+                    denolint.enable = true;
                   };
                 }
               ];
