@@ -32,15 +32,9 @@
                 {
                   # https://devenv.sh/reference/options/
                   packages = with pkgs; [
-                    # typst # write paper
-                    # typst-lsp
-                    # typst-fmt
-                    texlive.combined.scheme-medium # user latex instead
-
-                    rust-script # run rust in org
-                    # rustup # install stable version by command: rustup default stable
-                    # python311 # run python in org
-                    # gcc # run C/C++ in org
+                    typst # write paper
+                    typst-lsp
+                    typst-fmt
                   ];
                 }
               ];

@@ -61,9 +61,9 @@
 
     {
       templates = rec {
-        org = {
-          path = ./org;
-          description = "Org workspace env in emacs";
+        notes = {
+          path = ./notes;
+          description = "Writing env in helix, use typst and obsidian";
         };
         
         modern-c = {
@@ -87,6 +87,7 @@
         };
         
         # Aliases
+        n = notes;
         rs = rust;
         py = python;
         c = modern-c;
