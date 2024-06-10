@@ -32,10 +32,7 @@
               modules = [
                 {
                   packages = with pkgs; [
-                    black # formatter 
-                    isort # formatter
-                    nodePackages.pyright #lsp for python
-                    # dockerfile-language-server-nodejs # lsp for docker
+
                   ];
                   
                   # https://devenv.sh/reference/options/
