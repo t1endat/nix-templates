@@ -32,7 +32,7 @@
               modules = [
                 {
                   packages = with pkgs; [
-
+                    pyright # lsp for helix
                   ];
                   
                   # https://devenv.sh/reference/options/
