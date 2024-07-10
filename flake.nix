@@ -60,15 +60,10 @@
     //
 
     {
-      templates = rec {
-        notes = {
-          path = ./notes;
-          description = "Writing env in helix, use typst and obsidian";
-        };
-        
-        modern-c = {
-          path = ./modern-c;
-          description = "C (only) language dev env";
+      templates = rec {      
+        cc = {
+          path = ./cc;
+          description = "C/C++ language dev env";
         };
         
         python = {
@@ -80,18 +75,10 @@
           path = ./rust;
           description = "Rust language dev env";
         };
-
-        typescript = {
-          path = ./typescript;
-          description = "TypeScript language dev env";
-        };
-        
+       
         # Aliases
-        n = notes;
         rs = rust;
         py = python;
-        c = modern-c;
-        ts = typescript;
       };
     };
 }
