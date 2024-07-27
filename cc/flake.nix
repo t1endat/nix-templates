@@ -33,6 +33,7 @@
                   # https://devenv.sh/reference/options/
                   packages = with pkgs; [
                     clang-tools # including clang-format
+                    conan # package manager for c++
                   ];
 
                   # https://devenv.sh/languages/
