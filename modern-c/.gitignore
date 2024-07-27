@@ -51,3 +51,8 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+# nix stuff
+.devenv/
+.direnv/
+.pre-commit-config.yaml
