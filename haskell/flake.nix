@@ -34,7 +34,9 @@
               languages.haskell.enable = true;
 
               # https://devenv.sh/pre-commit-hooks/
-              pre-commit.hooks = { fprettify.enable = true; };
+              pre-commit.hooks = { 
+                ormolu.enable = true; # formatter 
+              };
             }];
           };
         });
