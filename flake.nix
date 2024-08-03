@@ -1,15 +1,18 @@
 {
-  description =
-    "Ready-made templates for easily creating flake-driven environments";
+  description = "Ready-made templates for easily creating flake-driven environments";
 
   inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
 
-  outputs = { self, nixpkgs }:
+  outputs =
+    { self, nixpkgs }:
     let
       overlays = [
-        (final: prev:
-          let exec = pkg: "${prev.${pkg}}/bin/${pkg}";
-          in {
+        (
+          final: prev:
+          let
+            exec = pkg: "${prev.${pkg}}/bin/${pkg}";
+          in
+          {
             format = prev.writeScriptBin "format" ''
               ${exec "nixpkgs-fmt"} **/*.nix
             '';
@@ -32,69 +35,86 @@
                 (
                   cd $dir
                   ${exec "nix"} flake update # Update flake.lock
-                  ${
-                    exec "nix"
-                  } flake check  # Make sure things work after the update
+                  ${exec "nix"} flake check  # Make sure things work after the update
                 )
               done
             '';
-          })
+          }
+        )
       ];
-      supportedSystems =
-        [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin" ];
-      forEachSupportedSystem = f:
-        nixpkgs.lib.genAttrs supportedSystems
-        (system: f { pkgs = import nixpkgs { inherit overlays system; }; });
-    in {
-      devShells = forEachSupportedSystem ({ pkgs }: {
-        default = pkgs.mkShell { packages = with pkgs; [ format update ]; };
-      });
+      supportedSystems = [
+        "x86_64-linux"
+        "aarch64-linux"
+        "x86_64-darwin"
+        "aarch64-darwin"
+      ];
+      forEachSupportedSystem =
+        f:
+        nixpkgs.lib.genAttrs supportedSystems (
+          system: f { pkgs = import nixpkgs { inherit overlays system; }; }
+        );
+    in
+    {
+      devShells = forEachSupportedSystem (
+        { pkgs }:
+        {
+          default = pkgs.mkShell {
+            packages = with pkgs; [
+              format
+              update
+            ];
+          };
+        }
+      );
 
-      packages = forEachSupportedSystem ({ pkgs }: rec {
-        default = dvt;
-        inherit (pkgs) dvt;
-      });
+      packages = forEachSupportedSystem (
+        { pkgs }:
+        rec {
+          default = dvt;
+          inherit (pkgs) dvt;
+        }
+      );
     }
 
     //
 
-    {
-      templates = rec {
-        modern-c = {
-          path = ./modern-c;
-          description = "C language dev env";
-        };
+      {
+        templates = rec {
+          modern-c = {
+            path = ./modern-c;
+            description = "C language dev env";
+          };
 
-        cpp = {
-          path = ./cpp;
-          description = "C++ lang dev env";
-        };
+          cpp = {
+            path = ./cpp;
+            description = "C++ lang dev env";
+          };
 
-        python = {
-          path = ./python;
-          description = "Python lang dev env";
-        };
+          python = {
+            path = ./python;
+            description = "Python lang dev env";
+          };
 
-        rust = {
-          path = ./rust;
-          description = "Rust lang dev env";
-        };
+          rust = {
+            path = ./rust;
+            description = "Rust lang dev env";
+          };
 
-        julia = {
-          path = ./julia;
-          description = "Julia lang dev env";
-        };
+          julia = {
+            path = ./julia;
+            description = "Julia lang dev env";
+          };
 
-        haskell = {
-          path = ./haskell;
-          description = "Haskell lang dev env";
-        };
+          haskell = {
+            path = ./haskell;
+            description = "Haskell lang dev env";
+          };
 
-        # Aliases
-        rs = rust;
-        py = python;
-        jl = julia;
-        hk = haskell;
+          # Aliases
+          rs = rust;
+          py = python;
+          jl = julia;
+          hk = haskell;
+        };
       };
-    };
 }
