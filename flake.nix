@@ -85,10 +85,16 @@
           description = "Julia lang dev env";
         };
 
+        haskell = {
+          path = ./haskell;
+          description = "Haskell lang dev env";
+        };
+
         # Aliases
         rs = rust;
         py = python;
         jl = julia;
+        hk = haskell;
       };
     };
 }
