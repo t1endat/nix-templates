@@ -32,7 +32,9 @@
               languages.julia.enable = true;
 
               # https://devenv.sh/pre-commit-hooks/
-              pre-commit.hooks = { juliaformatter.enable = true; };
+              # pre-commit.hooks = { 
+              #   juliaformatter.enable = true; 
+              # };
             }];
           };
         });

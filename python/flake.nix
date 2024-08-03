@@ -42,8 +42,9 @@
               };
 
               # https://devenv.sh/pre-commit-hooks/
-              pre-commit.hooks = { ruff.enable = true; };
-
+              # pre-commit.hooks = { 
+              #   ruff.enable = true; # linting 
+              # };
             }];
           };
         });

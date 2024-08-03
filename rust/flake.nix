@@ -45,11 +45,11 @@
               };
 
               # https://devenv.sh/pre-commit-hooks/
-              pre-commit.hooks = {
-                cargo-check.enable = true;
-                rustfmt.enable = true;
-                clippy.enable = true;
-              };
+              # pre-commit.hooks = {
+              #   cargo-check.enable = true;
+              #   rustfmt.enable = true;
+              #   clippy.enable = true;
+              # };
             }];
           };
         });

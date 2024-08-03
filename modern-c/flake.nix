@@ -35,7 +35,9 @@
               languages.c.enable = true;
 
               # https://devenv.sh/pre-commit-hooks/
-              pre-commit.hooks = { clang-format.enable = true; };
+              # pre-commit.hooks = { 
+              #   clang-format.enable = true; # formatter
+              # };
             }];
           };
         });
